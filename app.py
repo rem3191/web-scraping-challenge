@@ -18,7 +18,7 @@ def index():
 def scrape():
     scraped_data = scrape_mars.scrape_all()
     mars_db.update({}, scraped_data, upsert=True)
-    return redirect('/')
+    return redirect('/', code=302)
 
 if __name__ == "__main__":
     app.run(debug=True) # set to false if deploying to a live website server (such as Google Cloud, Heroku, or AWS Elastic Beanstaulk)
